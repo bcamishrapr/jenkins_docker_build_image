@@ -4,7 +4,7 @@ LABEL maintainer="Prasoon Mishra <prassonmishra330@gmail.com@gmail.com>"
 
 # Running all the cmd at one go
 RUN apt-get update && \
-    apt-get -qy full-upgrade && \
+   #apt-get -qy full-upgrade && \
     apt-get install -qy git && \
 # Install SSH-server as a requirements for jenkins
     apt-get install -qy openssh-server && \
@@ -14,8 +14,6 @@ RUN apt-get update && \
     apt-get install -qy openjdk-8-jdk && \
 # Install maven (This is optional step but can be useful for maven )
     apt-get install -qy maven && \
-# Install git (This is optional step but can be useful for maven )
-    apt-get install -qy git && \
 # Cleanup old packages
     apt-get -qy autoremove && \
 # Add user jenkins to the image
